@@ -1,0 +1,12 @@
+apiVersion: skaffold/v2beta7
+kind: Config
+build:
+  artifacts:
+    - image: shopping-cart-cdm
+      context: .
+  googleCloudBuild:
+    projectId: cd-tut
+deploy:
+  kubectl:
+    manifests:
+      - shopping-cart-cdm/kubernetes/*
