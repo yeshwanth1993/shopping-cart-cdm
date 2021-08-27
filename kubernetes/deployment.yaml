@@ -38,7 +38,7 @@ spec:
         app: shopping-cart-cdm
     spec:
       containers:
-      - name: shopping-cart-cdm
-        image: shopping-cart-cdm
-        ports:
-        - containerPort: 50001
+        - name: shopping-cart-cdm
+          image: shopping-cart-cdm
+          ports:
+            - containerPort: 8080
