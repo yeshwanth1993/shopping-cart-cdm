@@ -17,6 +17,7 @@ kind: Service
 metadata:
   name: shopping-cart-cdm
   namespace: shopping-cart-cdm
+  labels:
     app: shopping-cart-cdm
 ---
 apiVersion: apps/v1
