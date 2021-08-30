@@ -6,7 +6,7 @@ import time
 
 SAMPLE = "Something-CHange-3"
 
-CPU_UTIL = 0.2
+CPU_UTIL = 0.8
 
 def f(x):
 	while True:
