@@ -1,4 +1,8 @@
 steps:
   - name: gcr.io/cloud-builders/docker
     args: ["build", "-t", "us-central1-docker.pkg.dev/$PROJECT_ID/docker-repo/shopping-cart-cdm:github-${REPO_NAME}.${BRANCH_NAME}.${SHORT_SHA}", "."]
-images: ["us-central1-docker.pkg.dev/$PROJECT_ID/docker-repo/shopping-cart-cdm:github-${REPO_NAME}.${BRANCH_NAME}.${SHORT_SHA}"]
+  - name: gcr.io/cloud-builders/docker
+    args: ["push", "us-central1-docker.pkg.dev/$PROJECT_ID/docker-repo/shopping-cart-cdm:github-${REPO_NAME}.${BRANCH_NAME}.${SHORT_SHA}"]
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    args: ['gcloud', 'beta', 'deploy', 'releases', 'create', 'shopping-cart-$BUILD_ID', '--delivery-pipeline=shopping-cart-cdm', '--region=us-central1', '--images=name=us-central1-docker.pkg.dev/$PROJECT_ID/docker-repo/shopping-cart-cdm:github-${REPO_NAME}.${BRANCH_NAME}.${SHORT_SHA}']
+
