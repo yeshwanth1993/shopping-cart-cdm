@@ -1,4 +1,4 @@
 steps:
   - name: gcr.io/cloud-builders/docker
-    args: ["build", "-t", "us-central1-docker.pkg.dev/$PROJECT_ID/docker-repo/shopping-cart-cdm:github-${REPO_NAME}.${BRANCH_NAME}.${SHORT_SHA}", "."]
-images: ["us-central1-docker.pkg.dev/$PROJECT_ID/docker-repo/shopping-cart-cdm:github-${REPO_NAME}.${BRANCH_NAME}.${SHORT_SHA}"]
+    args: ["build", "-t", "us-central1-docker.pkg.dev/$PROJECT_ID/docker-repo/shopping-cart-cdm:latest", "."]
+images: ["us-central1-docker.pkg.dev/$PROJECT_ID/docker-repo/shopping-cart-cdm:latest"]
